@@ -1,0 +1,7 @@
+video {
+    margin-left: 20px!important;
+}
+
+button:disabled {
+    opacity: 0.5;
+}

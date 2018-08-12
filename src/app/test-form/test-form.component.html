@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Scenario 's</h1>
+  <div *ngIf="scenario==''">
+  <h3>Scenario 1</h3>
+  <p>
+    <br />Every participant is connected to the room but nobody has published their stream to the room. By pressing
+    the
+    <b>PUSH-TO-TALK</b> button, the user publishes the stream and other partipants subscribe to it immediately.
+  </p>
+  <div>
+    <button  (click)="chooseScenario('1')">Choose scenario 1</button>
+  </div>
+  <h3>Scenario 2</h3>
+  <p>
+    Every participant is connected to the room AND everyone has published their stream to the room. By pressing
+    the
+    <b>PUSH-TO-TALK</b> button, the user signals the others to subscribe to their stream.
+  </p>
+  <div>
+    <button  (click)="chooseScenario('2')">Choose scenario 2</button>
+  </div>
+</div>
+<div *ngIf="scenario!=''">
+  <div id="participants">
+
+  </div>
+  <div>
+    <button [disabled]="participantTalking" *ngIf="!talking" (click)="toggleTalking()" >Start Talking</button>
+    <button *ngIf="talking" (click)="toggleTalking()" >Stop Talking</button>
+  </div>
+  <Div>
+    <h1>Events</h1>
+  </Div>
+  <div *ngFor="let status of statuses">{{status}}</div>
+</div>
+</div>
